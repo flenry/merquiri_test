@@ -1,0 +1,15 @@
+Use Custom security annotations
+
+for example:
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+public @interface SecuredAdminOrUser {}
+
+    @SecuredAdminOrUser
+    public void methodA() {
+    }
+
+    @SecuredAdminOrUser
+    public void methodB() {
+    }
